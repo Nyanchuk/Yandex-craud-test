@@ -481,7 +481,7 @@ td {
 #playerLine {
     width: 1220px;
     overflow: hidden;
-  }
+}
 
 .main__player {
     float: left;
@@ -516,6 +516,12 @@ td {
     font-weight: 400;
     font-size: 20px;
     color: #313131;
+}
+
+.main__button_left:disabled {
+    background-color: rgb(165, 164, 164);
+    border-color: rgb(165, 164, 164);
+    cursor: not-allowed;
 }
 
 .main__player_button {

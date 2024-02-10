@@ -34,63 +34,71 @@ let players = [
     playerDiv.appendChild(playerButton);
     playerLine.appendChild(playerDiv);
   });
+
+
+  let currentIndex = 0;
+  const playersPerPage = 3;
+  const leftButton = document.querySelector(".main__button_left.left");
+  const rightButton = document.querySelector(".main__button_left.right");
   
-  let playerIndex = 0; // начинаем с первого участника
-  let visiblePlayers = 3; // количество видимых участников
-  let totalPlayers = 6; // общее количество участников
+  leftButton.addEventListener("click", () => {
+      if (currentIndex > 0) {
+          currentIndex--;
+          rightButton.disabled = false;
+          if (currentIndex === 0) {
+              leftButton.disabled = true;
+          }
+          showPlayers();
+      }
+  });
   
-  function displayPlayers() {
-    let displayedPlayers = [];
-    if (playerIndex + visiblePlayers <= players.length) {
-      displayedPlayers = players.slice(playerIndex, playerIndex + visiblePlayers);
-    } else {
-      displayedPlayers = [...players.slice(playerIndex), ...players.slice(0, visiblePlayers - (players.length - playerIndex))];
-    }
+  rightButton.addEventListener("click", () => {
+      if (currentIndex + playersPerPage < players.length) {
+          currentIndex++;
+          leftButton.disabled = false;
+          if (currentIndex + playersPerPage === players.length) {
+              rightButton.disabled = true;
+          }
+          showPlayers();
+      }
+  });
+
+  function updateCounter() {
+    const currentPageStart = currentIndex + 3;
+    document.querySelector("span#counter").textContent = currentPageStart  + "/" + players.length;
+}
   
-    let playerLine = document.getElementById("playerLine");
+  function showPlayers() {
+      playerLine.innerHTML = "";
+      for (let i = currentIndex; i < currentIndex + playersPerPage; i++) {
+          if (i < players.length) {
+              let playerDiv = document.createElement("div");
+              playerDiv.className = "main__player";
   
-    while (playerLine.firstChild) {
-      playerLine.removeChild(playerLine.firstChild);
-    }
+              let playerImg = document.createElement("img");
+              playerImg.src = "img/player.svg";
+              playerImg.className = "main__player_photo";
+              playerDiv.appendChild(playerImg);
   
-    displayedPlayers.forEach(player => {
-      let playerDiv = document.createElement("div");
-      playerDiv.className = "main__player";
+              let playerName = document.createElement("span");
+              playerName.className = "main__player_name";
+              playerName.textContent = players[i].name;
+              playerDiv.appendChild(playerName);
   
-      let playerImg = document.createElement("img");
-      playerImg.src = "img/player.svg";
-      playerImg.className = "main__player_photo";
-      playerDiv.appendChild(playerImg);
+              let playerRank = document.createElement("span");
+              playerRank.className = "main__player_rank";
+              playerRank.textContent = players[i].rank;
+              playerDiv.appendChild(playerRank);
   
-      let playerName = document.createElement("span");
-      playerName.className = "main__player_name";
-      playerName.textContent = player.name;
-      playerDiv.appendChild(playerName);
-  
-      let playerRank = document.createElement("span");
-      playerRank.className = "main__player_rank";
-      playerRank.textContent = player.rank;
-      playerDiv.appendChild(playerRank);
-  
-      let playerButton = document.createElement("button");
-      playerButton.className = "main__player_button";
-      playerButton.textContent = "Подробнее";
-      playerDiv.appendChild(playerButton);
-      playerLine.appendChild(playerDiv);
-    });
+              let playerButton = document.createElement("button");
+              playerButton.className = "main__player_button";
+              playerButton.textContent = "Подробнее";
+              playerDiv.appendChild(playerButton);
+              playerLine.appendChild(playerDiv);
+          }
+      }
+      updateCounter();
   }
   
-  function movePlayers(direction) {
-    if (direction === "left") {
-      playerIndex = (playerIndex - 1 + totalPlayers) % totalPlayers;
-    } else if (direction === "right") {
-      playerIndex = (playerIndex + 1) % totalPlayers;
-    }
-  
-    displayPlayers();
-  }
-  
-  document.querySelector(".main__button_left.left").addEventListener("click", () => movePlayers("left"));
-  document.querySelector(".main__button_left.right").addEventListener("click", () => movePlayers("right"));
-  
-  displayPlayers();
+  showPlayers();
+  updateCounter();
