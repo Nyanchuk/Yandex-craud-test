@@ -25,7 +25,7 @@
     padding-left: calc(50% - 600px);
     padding-right: calc(50% - 600px);
   }
-  
+
   .header {
     height: 700px;
     width: 100%;
@@ -88,7 +88,7 @@
     text-align: center;
     font-family: Golos Text;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 .header__buttons {
@@ -603,6 +603,12 @@ footer {
     .header {
         height: 812px;
         padding-top: 18px;
+        background-image: url(img/Group\ 8-Photoroom.png-Photoroom.png);
+    }
+    .header__bottom {
+        height: 40px;
+        font-size: 18px;
+        padding-bottom: 35px;
     }
     .logo {
         width: 19px;
@@ -635,8 +641,8 @@ footer {
     .header__button_two {
         width: 335px;
         height: 47px;
-        background-color: #ffffff73;
-        border-color: #ffffff73;
+        background-color: #ffffffbc;
+        border-color: transparent;
         color: #313131;
     }
     .main__session {
@@ -662,8 +668,8 @@ footer {
         margin-top: 25px;
     }
     .main__session_human {
-        width: 360px;
-        height: 410px;
+        width: 350px;
+        height: 400px;
     }
     .tabl_post {
         border-right: none;
@@ -817,6 +823,14 @@ footer {
         border: 1px solid #313131;
         border-radius: 5px;
         transition: all .3s;
+    }
+    .footer_h3 {
+        padding-left: 20px;
+        padding-right: 20px;
+        color: #313131a7;
+    }
+    footer {
+        height: 200px;
     }
 
 }
