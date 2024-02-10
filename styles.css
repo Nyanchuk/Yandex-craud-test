@@ -478,9 +478,17 @@ td {
     gap: 20px;
 }
 
-#playerLine {
+
+#playerWrapper {
     width: 1220px;
-    overflow: hidden;
+    overflow: hidden; 
+}
+
+#playerLine {
+    display: flex;
+    width: calc((394px + 20px) * 6); 
+    overflow: hidden; 
+    transition: transform 0.5s ease; 
 }
 
 .main__player {

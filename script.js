@@ -48,7 +48,8 @@ let players = [
           if (currentIndex === 0) {
               leftButton.disabled = true;
           }
-          showPlayers();
+              const start = currentIndex * (394 + 20); 
+              playerLine.style.transform = `translateX(-${start}px)`; 
       }
   });
   
@@ -59,46 +60,7 @@ let players = [
           if (currentIndex + playersPerPage === players.length) {
               rightButton.disabled = true;
           }
-          showPlayers();
+          const start = currentIndex * (394 + 20); 
+          playerLine.style.transform = `translateX(-${start}px)`; 
       }
   });
-
-  function updateCounter() {
-    const currentPageStart = currentIndex + 3;
-    document.querySelector("span#counter").textContent = currentPageStart  + "/" + players.length;
-}
-  
-  function showPlayers() {
-      playerLine.innerHTML = "";
-      for (let i = currentIndex; i < currentIndex + playersPerPage; i++) {
-          if (i < players.length) {
-              let playerDiv = document.createElement("div");
-              playerDiv.className = "main__player";
-  
-              let playerImg = document.createElement("img");
-              playerImg.src = "img/player.svg";
-              playerImg.className = "main__player_photo";
-              playerDiv.appendChild(playerImg);
-  
-              let playerName = document.createElement("span");
-              playerName.className = "main__player_name";
-              playerName.textContent = players[i].name;
-              playerDiv.appendChild(playerName);
-  
-              let playerRank = document.createElement("span");
-              playerRank.className = "main__player_rank";
-              playerRank.textContent = players[i].rank;
-              playerDiv.appendChild(playerRank);
-  
-              let playerButton = document.createElement("button");
-              playerButton.className = "main__player_button";
-              playerButton.textContent = "Подробнее";
-              playerDiv.appendChild(playerButton);
-              playerLine.appendChild(playerDiv);
-          }
-      }
-      updateCounter();
-  }
-  
-  showPlayers();
-  updateCounter();
