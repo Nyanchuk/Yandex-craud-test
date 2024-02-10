@@ -132,13 +132,12 @@ let currentImageIndex = 0;
 
 function updateImage() {
     mobileLevels.style.backgroundImage = `url(${images[currentImageIndex]})`;
-    // Обновляем цвет чек-поинтов
     const checkPoints = document.querySelectorAll('.button__check_point');
     checkPoints.forEach((point, index) => {
         if (index === currentImageIndex) {
-            point.classList.add('active'); // Добавляем класс для активного чек-поинта
+            point.classList.add('active');
         } else {
-            point.classList.remove('active'); // Удаляем класс у остальных чек-поинтов
+            point.classList.remove('active');
         }
     });
     if (currentImageIndex === images.length - 1) {
