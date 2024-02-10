@@ -103,11 +103,32 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const supportButtonLevel = document.querySelector('.header__button_two');
     const targetBlockLevels = document.getElementById('levels');
   
     supportButtonLevel.addEventListener('click', function() {
         targetBlockLevels.scrollIntoView({ behavior: 'smooth' });
     });
-  });
+});
+
+const mobileLevels = document.querySelector('.mobile__levels');
+const prevButton = document.querySelector('.lev');
+const nextButton = document.querySelector('.rig');
+
+const images = ['url(img/level_1.svg)', 'url(img/level_2.svg)', 'url(img/level_3.svg)', 'url(img/level_4.svg)', 'url(img/level_5.svg)'];
+let currentImageIndex = 0;
+
+function updateImage() {
+    mobileLevels.style.backgroundImage = images[currentImageIndex];
+}
+
+prevButton.addEventListener('click', function() {
+    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+    updateImage();
+});
+
+nextButton.addEventListener('click', function() {
+    currentImageIndex = (currentImageIndex + 1) % images.length;
+    updateImage();
+});

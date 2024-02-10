@@ -587,6 +587,14 @@ footer {
     color: #313131;
 }
 
+.mobile__levels {
+    display: none;
+}
+
+.mobile__levels_button {
+    display: none;
+}
+
 @media (max-width: 375px) {
     .center {
         padding-left: 15px;
@@ -661,7 +669,6 @@ footer {
         border-right: none;
         border: none;
     }
-
     .tabl_text .tabl__border {
         padding: 0;
         margin: 0;
@@ -669,21 +676,16 @@ footer {
         border: none;
         font-size: 20px;
     }
-
-    
-
     td {
         height: 40px;
         padding: 0;
     }
-    
     .tabl_text {
         padding: 0;
         margin: 0;
         max-width: 404px;
         font-weight: 600;
     }
-    
     .tabl_post {
         padding: 0;
         margin: 0;
@@ -692,12 +694,10 @@ footer {
     .mobile__border {
         border-bottom: 2px solid #D0D0D0;
     }
-
     .tabl__border {
         color: #595653;
         padding-top: 8px;
     }
-
     .mobile {
         padding: 0;
         padding-top: 8px;
@@ -707,4 +707,78 @@ footer {
     .custom__table td {
         display: block;
     }
+    .main__levels {
+        margin-top: 120px;
+    }
+    .main__levels_title {
+        margin-bottom: 12px;
+        width: auto;
+        height: auto;
+    }
+    .main__levels_title_main {
+        font-size: 36px;
+    }
+    .main__levels_title_low {
+        position: static; 
+        top: 0;
+        right: auto;
+        width: 335px;
+        font-size: 18px;
+    }
+    .main__levels_num {
+        display: none;
+    }
+    .main__level_cub {
+        display: none;
+    }
+    .main__level_six {
+        display: none;
+    }
+    .main__level_long {
+        display: none;
+    }
+    .level_round {
+        display: none;
+    }
+    .level_round_txt_seven {
+        display: none;
+    }
+    .airplane_img {
+        width: 335px;
+        height: 182px;
+        top: -110px;
+        left: 0px;
+        transform: rotate(1.31deg);;
+    }
+    .mobile__levels {
+        margin-top: 25px;
+        position: relative;
+        width: 335px;
+        height: 300px;
+        background-image: url(img/level_1.svg);
+        display: block;
+    }
+    .mobile__levels_button {
+        display: block;
+    }
+    .button__left_mobile {
+        cursor: pointer;
+        width: 44px;
+        height: 44px;
+        border: 1px solid #313131;
+        border-radius: 60px;
+        background-color: #313131;
+        transition: all .3s;
+    }
+    .lev {
+        background-image: url(img/left.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .rig {
+        background-image: url(img/right.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
 }
