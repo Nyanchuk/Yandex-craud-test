@@ -658,6 +658,53 @@ footer {
         height: 410px;
     }
     .tabl_post {
-        border-bottom: none;
+        border-right: none;
+        border: none;
+    }
+
+    .tabl_text .tabl__border {
+        padding: 0;
+        margin: 0;
+        width: 335px;
+        border: none;
+        font-size: 20px;
+    }
+
+    
+
+    td {
+        height: 40px;
+        padding: 0;
+    }
+    
+    .tabl_text {
+        padding: 0;
+        margin: 0;
+        max-width: 404px;
+        font-weight: 600;
+    }
+    
+    .tabl_post {
+        padding: 0;
+        margin: 0;
+        border: none;
+    }
+    .mobile__border {
+        border-bottom: 2px solid #D0D0D0;
+    }
+
+    .tabl__border {
+        color: #595653;
+        padding-top: 8px;
+    }
+
+    .mobile {
+        padding: 0;
+        padding-top: 8px;
+        margin: 0;
+        border: none;
+    }
+    .custom__table td {
+        display: block;
     }
 }
