@@ -2,6 +2,10 @@
     from { left: 100%; }
     to { left: -100%; } /* двигаем текст обратно в начальную позицию */
 }
+@keyframes run {
+    0% { text-indent: 0; }
+    100% { text-indent: -100%; }
+}
 
 * {
     margin: 0;
@@ -141,22 +145,17 @@
     font-weight: 400;
     font-size: 22px;
 }
-
-@keyframes run {
-    0% { text-indent: 0; }
-    100% { text-indent: -100%; }
-  }
   
-  .running-text-container {
+.running-text-container {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
-  }
+}
   
-  #running-text {
+#running-text {
     display: inline-block;
     animation: run 15s linear infinite;
-  }
+}
 
 .header__button_one:hover {
     border: 1px solid #FBCE51;
@@ -180,18 +179,26 @@
 }
 
 .main__session_chess {
-    margin-bottom: 64px;
+    margin-bottom: 80px;
+    margin-top: 90px;
     display: flex;
     flex-wrap: nowrap;
     gap: 15px;
 }
 
 .main__session_text {
+    position: relative;
     max-width: 764px;
     font-family: Merriweather;
     font-weight: 400;
     font-size: 36px;
     color: #313131;
+}
+
+.main__session_img {
+    position: absolute;
+    top: -30px;
+    right: -420px;
 }
 
 .highlight {
@@ -315,7 +322,6 @@ td {
     justify-content: start;
     gap: 20px;
 }
-
 
 .main__level_four {
     padding-top: 20px;
@@ -579,4 +585,79 @@ footer {
     font-weight: 400;
     font-size: 16px;
     color: #313131;
+}
+
+@media (max-width: 375px) {
+    .center {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .header {
+        height: 812px;
+        padding-top: 18px;
+    }
+    .logo {
+        width: 19px;
+        height: 27px;
+    }
+    .header__main {
+        width: 335px;
+        height: 160px;
+    }
+    .header__title_one {
+        margin-top: 40px;
+        font-size: 36px;
+    }
+    .header__title_two {
+
+        font-size: 36px;
+    }
+    .header__title_info {
+        text-align: start;
+        font-size: 18px;
+    }
+    .header__buttons {
+        flex-direction: column;
+        gap: 14px;
+    }
+    .header__button_one {
+        width: 335px;
+        height: 47px;
+    }
+    .header__button_two {
+        width: 335px;
+        height: 47px;
+        background-color: #ffffff73;
+        border-color: #ffffff73;
+        color: #313131;
+    }
+    .main__session {
+        margin-top: 48px;
+    }
+    .main__session_chess {
+        margin-top: 48px;
+        margin-bottom: 34px;
+        flex-direction: column;
+    }
+    .main__session_text {
+        display: flex;
+        flex-direction: column;
+        font-size: 28px;
+    }
+    .main__session_img {
+        width: 315px;
+        height: 212px;
+        position: static; 
+        top: 0;
+        right: auto;
+        margin-bottom: 25px;
+        margin-top: 25px;
+    }
+    .main__session_human {
+        width: 360px;
+        height: 410px;
+    }
+    .tabl_post {
+        border-bottom: none;
+    }
 }
