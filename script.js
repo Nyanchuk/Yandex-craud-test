@@ -112,23 +112,40 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+function preloadImages(imageUrls) {
+    imageUrls.forEach(function(url) {
+        const img = new Image();
+        img.src = url;
+    });
+}
+
+const images = ['img/level_1.svg', 'img/level_2.svg', 'img/level_3.svg', 'img/level_4.svg', 'img/level_5.svg'];
+preloadImages(images);
+
 const mobileLevels = document.querySelector('.mobile__levels');
 const prevButton = document.querySelector('.lev');
 const nextButton = document.querySelector('.rig');
 
-const images = ['url(img/level_1.svg)', 'url(img/level_2.svg)', 'url(img/level_3.svg)', 'url(img/level_4.svg)', 'url(img/level_5.svg)'];
 let currentImageIndex = 0;
 
 function updateImage() {
-    mobileLevels.style.backgroundImage = images[currentImageIndex];
+    mobileLevels.style.backgroundImage = `url(${images[currentImageIndex]})`;
 }
 
 prevButton.addEventListener('click', function() {
     currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-    updateImage();
+    mobileLevels.classList.add('fade-out');
+    setTimeout(function() {
+        updateImage();
+        mobileLevels.classList.remove('fade-out'); 
+    }, 500);
 });
 
 nextButton.addEventListener('click', function() {
     currentImageIndex = (currentImageIndex + 1) % images.length;
-    updateImage();
+    mobileLevels.classList.add('fade-out');
+    setTimeout(function() {
+        updateImage(); 
+        mobileLevels.classList.remove('fade-out');
+    }, 500);
 });
