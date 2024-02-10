@@ -472,4 +472,68 @@ td {
     justify-content: space-between;
 }
 
+.main__player_line {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
 
+#playerLine {
+    width: 1220px;
+    overflow: hidden;
+  }
+
+.main__player {
+    float: left;
+    margin-right: 30px;
+    margin-top: 64px;
+    padding-left: 36px;
+    padding-left: 36px;
+    width: 394px;
+    height: 482px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__player_photo {
+    width: 320px;
+    height: 320px;
+    
+}
+
+.main__player_name {
+    font-family: Golos Text;
+    font-weight: 600;
+    font-size: 24px;
+    color: #313131;
+}
+
+.main__player_rank {
+    font-family: Golos Text;
+    font-weight: 400;
+    font-size: 20px;
+    color: #313131;
+}
+
+.main__player_button {
+    cursor: pointer;
+    width: 113px;
+    height: 35px;
+    background-color: transparent;
+    border: 1px solid #3057A2;
+    border-radius: 50px;
+    color: #3057A2;
+    text-align: center;
+    font-family: Golos Text;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all .3s;
+}
+
+.main__player_button:hover {
+    background-color: #3057A2;
+    color: #fff;
+}
