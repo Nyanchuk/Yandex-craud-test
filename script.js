@@ -125,11 +125,32 @@ preloadImages(images);
 const mobileLevels = document.querySelector('.mobile__levels');
 const prevButton = document.querySelector('.lev');
 const nextButton = document.querySelector('.rig');
+prevButton.disabled = true;
+
 
 let currentImageIndex = 0;
 
 function updateImage() {
     mobileLevels.style.backgroundImage = `url(${images[currentImageIndex]})`;
+    // Обновляем цвет чек-поинтов
+    const checkPoints = document.querySelectorAll('.button__check_point');
+    checkPoints.forEach((point, index) => {
+        if (index === currentImageIndex) {
+            point.classList.add('active'); // Добавляем класс для активного чек-поинта
+        } else {
+            point.classList.remove('active'); // Удаляем класс у остальных чек-поинтов
+        }
+    });
+    if (currentImageIndex === images.length - 1) {
+        nextButton.disabled = true;
+    } else {
+        nextButton.disabled = false;
+    }
+    if (currentImageIndex === 0) {
+        prevButton.disabled = true;
+    } else {
+        prevButton.disabled = false;
+    }
 }
 
 prevButton.addEventListener('click', function() {
@@ -149,3 +170,5 @@ nextButton.addEventListener('click', function() {
         mobileLevels.classList.remove('fade-out');
     }, 500);
 });
+
+updateImage();

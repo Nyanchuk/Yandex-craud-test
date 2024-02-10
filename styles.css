@@ -761,6 +761,10 @@ footer {
     }
     .mobile__levels_button {
         display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
     }
     .button__left_mobile {
         cursor: pointer;
@@ -771,6 +775,10 @@ footer {
         background-color: #313131;
         transition: all .3s;
     }
+    .button__left_mobile:hover {
+        border: 1px solid #FBCE51;
+        background-color: #FBCE51;
+    }
     .lev {
         background-image: url(img/left.svg);
         background-position: center;
@@ -780,6 +788,35 @@ footer {
         background-image: url(img/right.svg);
         background-position: center;
         background-repeat: no-repeat;
+    }
+    .button__left_mobile:disabled {
+        background-color: rgb(165, 164, 164);
+        border-color: rgb(165, 164, 164);
+        cursor: not-allowed;
+    }
+    .button__check {
+        width: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    .button__check_point {
+        box-sizing: border-box;
+        width: 10px;
+        height: 10px;
+        background-color: #D9D9D9;
+        border: 1px solid #D9D9D9;
+        border-radius: 5px;
+        transition: all .3s;
+    }
+    .active {
+        box-sizing: border-box;
+        width: 10px;
+        height: 10px;
+        background-color: #313131;
+        border: 1px solid #313131;
+        border-radius: 5px;
+        transition: all .3s;
     }
 
 }
