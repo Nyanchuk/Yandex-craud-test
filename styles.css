@@ -143,14 +143,19 @@
 }
 
 @keyframes run {
-    from { transform: translateX(100%); }
-    to { transform: translateX(-100%); }
+    0% { text-indent: 0; }
+    100% { text-indent: -100%; }
+  }
+  
+  .running-text-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
   }
   
   #running-text {
-    white-space: nowrap; 
     display: inline-block;
-    animation: run 10s linear infinite; /* Измените продолжительность анимации по вашему усмотрению */
+    animation: run 15s linear infinite;
   }
 
 .header__button_one:hover {
@@ -215,9 +220,14 @@ td {
     color:#313131;
 }
 
+.custom__table {
+    border-collapse: collapse;
+}
+
 .tabl__border {
+    box-sizing: border-box;
     width: 320px;
-    border-right: 2px dashed #D0D0D0;
+    border-right: 2px solid #D0D0D0;
 }
 
 .tabl_text {
@@ -226,7 +236,7 @@ td {
 }
 
 .tabl_post {
-    border-bottom: 2px dashed #D0D0D0;
+    border-bottom: 2px solid #D0D0D0;
 }
 
 .cross_out {
@@ -481,6 +491,7 @@ td {
 
 #playerWrapper {
     width: 1220px;
+    margin-bottom: 140px;
     overflow: hidden; 
 }
 
@@ -550,4 +561,22 @@ td {
 .main__player_button:hover {
     background-color: #3057A2;
     color: #fff;
+}
+
+footer {
+    height: 150px;
+    width: 100%;
+    color: #E9DED4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_h3 {
+    padding-left: 72px;
+    padding-right: 72px;
+    font-family: Golos Text;
+    font-weight: 400;
+    font-size: 16px;
+    color: #313131;
 }

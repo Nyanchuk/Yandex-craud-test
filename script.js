@@ -40,6 +40,26 @@ let players = [
   const playersPerPage = 3;
   const leftButton = document.querySelector(".main__button_left.left");
   const rightButton = document.querySelector(".main__button_left.right");
+  const supportButton = document.querySelector("header__button_one");
+  leftButton.disabled = true;
+
+function startAutoScroll() {
+    let scrollingForward = true;
+
+    intervalId = setInterval(() => {
+        if (scrollingForward) {
+            rightButton.click();
+        } else {
+            leftButton.click();
+        }
+
+        if (currentIndex + playersPerPage >= players.length) {
+            scrollingForward = false;
+        } else if (currentIndex <= 0) {
+            scrollingForward = true; 
+        }
+    }, 4000);
+}
   
   leftButton.addEventListener("click", () => {
       if (currentIndex > 0) {
@@ -48,8 +68,9 @@ let players = [
           if (currentIndex === 0) {
               leftButton.disabled = true;
           }
-              const start = currentIndex * (394 + 20); 
-              playerLine.style.transform = `translateX(-${start}px)`; 
+            const start = currentIndex * (394 + 20); 
+            playerLine.style.transform = `translateX(-${start}px)`; 
+            updateCounter()
       }
   });
   
@@ -62,5 +83,31 @@ let players = [
           }
           const start = currentIndex * (394 + 20); 
           playerLine.style.transform = `translateX(-${start}px)`; 
+          updateCounter()
       }
+  });
+
+function updateCounter() {
+    const currentPageStart = currentIndex + 3;
+    document.querySelector("span#counter").textContent = currentPageStart  + "/" + players.length;
+}
+updateCounter();
+startAutoScroll();
+
+document.addEventListener('DOMContentLoaded', function() {
+    const supportButton = document.querySelector('.header__button_one');
+    const targetBlock = document.querySelector('.main__session_text');
+  
+    supportButton.addEventListener('click', function() {
+      targetBlock.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const supportButtonLevel = document.querySelector('.header__button_two');
+    const targetBlockLevels = document.getElementById('levels');
+  
+    supportButtonLevel.addEventListener('click', function() {
+        targetBlockLevels.scrollIntoView({ behavior: 'smooth' });
+    });
   });
