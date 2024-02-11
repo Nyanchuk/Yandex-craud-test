@@ -37,11 +37,21 @@ let players = [
 
 
   let currentIndex = 0;
-  const playersPerPage = 3;
   const leftButton = document.querySelector(".main__button_left.left");
   const rightButton = document.querySelector(".main__button_left.right");
   const supportButton = document.querySelector("header__button_one");
   leftButton.disabled = true;
+
+  function displayPlayers() {
+    if (window.matchMedia("(max-width: 375px)").matches) {
+        playersPerPage = 1;
+    } else {
+        playersPerPage = 3;
+    }
+    updateCounter()
+}
+
+displayPlayers()
 
 function startAutoScroll() {
     let scrollingForward = true;
@@ -68,7 +78,7 @@ function startAutoScroll() {
           if (currentIndex === 0) {
               leftButton.disabled = true;
           }
-            const start = currentIndex * (394 + 20); 
+            const start = currentIndex * (375 + 36); 
             playerLine.style.transform = `translateX(-${start}px)`; 
             updateCounter()
       }
@@ -81,15 +91,20 @@ function startAutoScroll() {
           if (currentIndex + playersPerPage === players.length) {
               rightButton.disabled = true;
           }
-          const start = currentIndex * (394 + 20); 
+          const start = currentIndex * (375 + 36); 
           playerLine.style.transform = `translateX(-${start}px)`; 
           updateCounter()
       }
   });
 
 function updateCounter() {
-    const currentPageStart = currentIndex + 3;
-    document.querySelector("span#counter").textContent = currentPageStart  + "/" + players.length;
+    if (window.matchMedia("(max-width: 375px)").matches) {
+        const currentPageStart = currentIndex + 1;
+        document.querySelector("span#counter").textContent = currentPageStart  + "/" + players.length;
+    } else {
+        const currentPageStart = currentIndex + 3;
+        document.querySelector("span#counter").textContent = currentPageStart  + "/" + players.length;
+    }
 }
 updateCounter();
 startAutoScroll();
