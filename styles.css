@@ -494,7 +494,6 @@ td {
     gap: 20px;
 }
 
-
 #playerWrapper {
     width: 1220px;
     margin-bottom: 140px;
@@ -597,7 +596,7 @@ footer {
 
 @media (max-width: 375px) {
     .center {
-        padding-left: 15px;
+        padding-left: 20px;
         padding-right: 15px;
     }
     .header {
@@ -647,7 +646,7 @@ footer {
     }
     .main__session {
         margin-top: 48px;
-        padding-left: 10px;
+        padding-left: 15px;
     }
     .main__session_chess {
         margin-top: 48px;
@@ -660,8 +659,8 @@ footer {
         font-size: 28px;
     }
     .main__session_img {
-        width: 315px;
         height: 212px;
+        padding-left: 5px;
         position: static; 
         top: 0;
         right: auto;
@@ -717,7 +716,7 @@ footer {
     }
     .main__levels {
         margin-top: 120px;
-        width: 345px;
+        width: 375px;
     }
     .main__levels_title {
         margin-bottom: 12px;
@@ -754,16 +753,16 @@ footer {
         display: none;
     }
     .airplane_img {
-        width: 335px;
-        height: 182px;
+        width: 340px;
+        height: 190px;
         top: -110px;
         left: 0px;
-        transform: rotate(1.31deg);;
+        transform: rotate(1.31deg);
     }
     .mobile__levels {
         margin-top: 25px;
         position: relative;
-        width: 330px;
+        width: 335px;
         height: 300px;
         background-image: url(img/level_1.svg);
         display: block;
@@ -840,39 +839,35 @@ footer {
         width: 244px;
         height: 244px;
     }
-
-    .main__bottom_block {
-        position: absolute;
-        
-    }
-    
     .main__player_line {
         display: flex;
         flex-wrap: nowrap;
         gap: 50px;
     }
-
     .main__player {
         margin-top: 0;
         margin-left: 5px;
-
         padding-left: 0;
         padding-right: 0;
         width: 335px;
         gap: 20px;
     }
-    
     #playerWrapper {
         width: auto;
     }
-    
     #playerLine {
-        display: flex;
         align-items: start;
         gap: 40px;
         width: calc((295px+70px) * 6); 
-        overflow: hidden; 
         transition: transform 0.5s ease; 
+    }
+    .main__bottom {
+        position: relative;
+    }
+    .main__bottom_block {
+        position: absolute;
+        bottom: -530px;
+        left: 95px;
     }
 
 }
