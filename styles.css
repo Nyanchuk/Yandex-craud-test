@@ -597,65 +597,79 @@ footer {
         padding-left: 20px;
         padding-right: 15px;
     }
+
     .header {
         height: 812px;
         padding-top: 18px;
         background-image: url(img/Group\ 8-Photoroom.png-Photoroom.png);
     }
+
     .header__bottom {
         height: 40px;
         font-size: 18px;
         padding-bottom: 35px;
     }
+
     .logo {
         width: 19px;
         height: 27px;
     }
+    
     .header__main {
         width: 335px;
         height: 160px;
     }
+
     .header__title_one {
         margin-top: 40px;
         font-size: 36px;
     }
+
     .header__title_two {
 
         font-size: 36px;
     }
+
     .header__title_info {
         text-align: start;
         font-size: 18px;
     }
+
     .header__buttons {
         flex-direction: column;
         gap: 14px;
     }
+
     .header__button_one {
-        width: 335px;
+        width: 325px;
         height: 47px;
     }
+
     .header__button_two {
-        width: 335px;
+        width: 325px;
         height: 47px;
         background-color: #ffffffbc;
         border-color: transparent;
         color: #313131;
     }
+
     .main__session {
         margin-top: 48px;
         padding-left: 15px;
     }
+
     .main__session_chess {
         margin-top: 48px;
         margin-bottom: 34px;
         flex-direction: column;
     }
+
     .main__session_text {
         display: flex;
         flex-direction: column;
         font-size: 28px;
     }
+
     .main__session_img {
         height: 212px;
         padding-left: 5px;
@@ -665,14 +679,19 @@ footer {
         margin-bottom: 25px;
         margin-top: 25px;
     }
+
     .main__session_human {
-        width: 350px;
-        height: 400px;
+        margin-left: 0;
+        margin-right: 0;
+        width: 325px;
+        height: 385px;
     }
+
     .tabl_post {
         border-right: none;
         border: none;
     }
+
     .tabl_text .tabl__border {
         padding: 0;
         margin: 0;
@@ -680,51 +699,66 @@ footer {
         border: none;
         font-size: 20px;
     }
+
     td {
         height: 40px;
         padding: 0;
     }
+
     .tabl_text {
         padding: 0;
         margin: 0;
         max-width: 345px;
         font-weight: 600;
     }
+
     .tabl_post {
         padding: 0;
         margin: 0;
         border: none;
     }
+
     .mobile__border {
         max-width: 335px;
         border-bottom: 2px solid #D0D0D0;
     }
+
     .tabl__border {
         color: #595653;
         padding-top: 8px;
     }
+
     .mobile {
         padding: 0;
         padding-top: 8px;
         margin: 0;
         border: none;
     }
+
     .custom__table td {
         display: block;
     }
+
     .main__levels {
         margin-top: 120px;
-        width: 375px;
+        width: 355px;
     }
+
+    .main__levels_five {
+        width: 330px;
+    }
+
     .main__levels_title {
         margin-bottom: 12px;
         width: auto;
         height: auto;
     }
+
     .main__levels_title_main {
         position: relative;
         font-size: 36px;
     }
+
     .main__levels_title_low {
         position: static; 
         top: 0;
@@ -732,24 +766,31 @@ footer {
         width: 335px;
         font-size: 18px;
     }
+
     .main__levels_num {
         display: none;
     }
+
     .main__level_cub {
         display: none;
     }
+
     .main__level_six {
         display: none;
     }
+
     .main__level_long {
         display: none;
     }
+
     .level_round {
         display: none;
     }
+
     .level_round_txt_seven {
         display: none;
     }
+
     .airplane_img {
         width: 340px;
         height: 190px;
@@ -757,15 +798,17 @@ footer {
         left: 0px;
         transform: rotate(1.31deg);
     }
+
     .mobile__levels {
         margin-top: 25px;
         position: relative;
-        width: 335px;
+        width: 100%;
         height: 300px;
         background-image: url(img/level_1.svg);
         display: block;
         transition: background-image 0.5s ease;
     }
+
     .mobile__levels_button {
         display: block;
         display: flex;
@@ -773,6 +816,7 @@ footer {
         align-items: center;
         gap: 10px;
     }
+
     .button__left_mobile {
         cursor: pointer;
         width: 44px;
@@ -782,31 +826,37 @@ footer {
         background-color: #313131;
         transition: all .3s;
     }
+
     .button__left_mobile:hover {
         border: 1px solid #FBCE51;
         background-color: #FBCE51;
     }
+
     .lev {
         background-image: url(img/left.svg);
         background-position: center;
         background-repeat: no-repeat;
     }
+
     .rig {
         background-image: url(img/right.svg);
         background-position: center;
         background-repeat: no-repeat;
     }
+
     .button__left_mobile:disabled {
         background-color: rgb(165, 164, 164);
         border-color: rgb(165, 164, 164);
         cursor: not-allowed;
     }
+
     .button__check {
         width: auto;
         display: flex;
         flex-wrap: wrap;
         gap: 5px;
     }
+
     .button__check_point {
         box-sizing: border-box;
         width: 10px;
@@ -816,6 +866,7 @@ footer {
         border-radius: 5px;
         transition: all .3s;
     }
+
     .active {
         box-sizing: border-box;
         width: 10px;
@@ -825,23 +876,28 @@ footer {
         border-radius: 5px;
         transition: all .3s;
     }
+
     .footer_h3 {
         padding-left: 20px;
         padding-right: 20px;
         color: #313131a7;
     }
+
     footer {
         height: 200px;
     }
+
     .main__player_photo {
         width: 244px;
         height: 244px;
     }
+
     .main__player_line {
         width: 2250px;
         display: flex;
         flex-wrap: nowrap;
     }
+
     .main__player {
         margin-top: 0;
         margin-left:0;
@@ -849,22 +905,25 @@ footer {
         padding-right: 0;
         width: 375px;
     }
+
     #playerWrapper {
         width: auto;
     }
+
     #playerLine {
         align-items: start;
         gap: 40px;
         width: calc((375px+29px) * 6); 
         transition: transform 0.5s ease; 
     }
+
     .main__bottom {
         position: relative;
     }
+
     .main__bottom_block {
         position: absolute;
         bottom: -530px;
         left: 95px;
     }
-
 }
